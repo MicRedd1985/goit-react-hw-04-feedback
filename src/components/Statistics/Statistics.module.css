@@ -1,0 +1,9 @@
+.statistic {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  
+  .statItem {
+    margin-bottom: 10px;
+  }
