@@ -1,25 +1,24 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import style from 'components/FeedbackOptions/FeedbackOptions.module.css'
+import style from 'components/FeedbackOptions/FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-    const onButtonClick = evt => {
-    onLeaveFeedback(evt.target.dataset.name);
-  };
-    return (
-        <div className={style.options}>
-            {options.map(item => (
-                <button 
-                    type="button"
-                    data-name={item}
-                    className={style.btn}
-                    onClick={onButtonClick}
-                    key={item}
-                >{item}</button>
-           ))}
-        </div>
-    )
-}
+  return (
+    <div className={style.options}>
+      {options.map(item => (
+        <button
+          type="button"
+          name={item}
+          className={style.btn}
+          onClick={onLeaveFeedback}
+          key={item}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
